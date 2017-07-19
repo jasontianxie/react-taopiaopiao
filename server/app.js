@@ -14,7 +14,7 @@ var ejs = require('ejs');
 app.set('views', path.join(__dirname, 'views'));//为app设置变量，有些变量时保留名，比如这里的views和view engine，可以用app.get来获取变量：http://www.expressjs.com.cn/4x/api.html#app.set
 app.set('view engine', 'ejs');
 
-app.engine('.html', ejs.__express);//为扩展名文件配置模板引擎：http://www.expressjs.com.cn/4x/api.html#app.engine
+app.engine('.html', ejs.__express);//为扩展名文件配置模板引擎：http://www.expressjs.com.cn/4x/api.html#app.engine。通常设置了上面的app.set('views', path.join(__dirname, 'views'));和app.set('view engine', 'ejs');就不用app.engine了，express会自动调用模板引擎。那么什么时候要用app.engine呢，两种情况下要用，第一：模板引擎没有提供__express方法，第二：模板引擎要解析其他后缀名的文件。比如这里，ejs模板本来是解析.ejs后缀的文件，但是这里需要解析html，所以要用app.engine
 app.set('view engine', 'html');// app.set('view engine', 'ejs');
 
 app.use(favicon(path.join(__dirname, 'favicon', 'favicon.ico')));//app.use为路由增加中间件，当访问这个路由的时候，就会调用这个中间件。http://www.expressjs.com.cn/4x/api.html#app.use
