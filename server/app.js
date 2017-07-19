@@ -11,7 +11,7 @@ var routes = require('./routes/route_app');
 var app = express();
 var ejs = require('ejs');
 
-app.set('views', path.join(__dirname, 'views'));//为app设置变量，可以用app.get来获取变量：http://www.expressjs.com.cn/4x/api.html#app.set
+app.set('views', path.join(__dirname, 'views'));//为app设置变量，有些变量时保留名，比如这里的views和view engine，可以用app.get来获取变量：http://www.expressjs.com.cn/4x/api.html#app.set
 app.set('view engine', 'ejs');
 
 app.engine('.html', ejs.__express);//为扩展名文件配置模板引擎：http://www.expressjs.com.cn/4x/api.html#app.engine
