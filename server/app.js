@@ -14,7 +14,7 @@ var ejs = require('ejs');
 app.set('views', path.join(__dirname, 'views'));//为app设置变量，可以用app.get来获取变量：http://www.expressjs.com.cn/4x/api.html#app.set
 app.set('view engine', 'ejs');
 
-app.engine('.html', ejs.__express);
+app.engine('.html', ejs.__express);//为扩展名文件配置模板引擎：http://www.expressjs.com.cn/4x/api.html#app.engine
 app.set('view engine', 'html');// app.set('view engine', 'ejs');
 
 app.use(favicon(path.join(__dirname, 'favicon', 'favicon.ico')));//app.use为路由增加中间件，当访问这个路由的时候，就会调用这个中间件。http://www.expressjs.com.cn/4x/api.html#app.use
@@ -22,7 +22,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));//express管理静态资源：http://www.expressjs.com.cn/4x/api.html#express.static
 
 //处理webpack服务请求
 app.get('/__webpack_hmr', function(req, res) {
