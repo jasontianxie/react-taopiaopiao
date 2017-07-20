@@ -1,9 +1,9 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var logger = require('morgan');//httplog
+var cookieParser = require('cookie-parser');//解析cookie。
+var bodyParser = require('body-parser');//解析http request。
 let fs = require('fs');
 
 var routes = require('./routes/route_app');
