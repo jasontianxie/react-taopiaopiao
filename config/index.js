@@ -1,6 +1,6 @@
 const path = require('path')
 const debug = require('debug')('app:config')
-const argv = require('yargs').argv
+const argv = require('yargs').argv//可以在nodejs应用程序内部访问node命令行参数。比如一个app.js文件，用node运行：node app.js --aaa=4。那么在app.js内部就可以用yargs取到aaa变量。
 const ip = require('ip')
 
 debug('Creating default configuration.')
